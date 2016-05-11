@@ -20,6 +20,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-develop-server": "^0.5.1",
-    "gulp-livereload": "^3.8.1"
+    "gulp-livereload": "^3.8.1",
+    "riot": "^2.2.4",
+    "riotjs": "^1.0.4"
   }
 }

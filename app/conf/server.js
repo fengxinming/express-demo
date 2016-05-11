@@ -17,13 +17,13 @@ module.exports = {
     SESSION_SECRET: '*.ziztour',
 
     //开发模板路径
-    CLIENT_DIR: path.join(__dirname, '../app/client'),
+    CLIENT_DIR: path.join(__dirname, '../client'),
 
     //配置路径
     CONF_DIR: path.join(__dirname, '../conf'),
 
     //网页模板路径
-    VIEWS_DIR: path.join(__dirname, '../app/client/views'),
+    VIEWS_DIR: path.join(__dirname, '../client/views'),
 
     //日志文件
     LOGS_DIR: path.join(__dirname, '../logs'),

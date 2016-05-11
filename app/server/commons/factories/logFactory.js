@@ -3,18 +3,18 @@
 const fs = require('fs');
 const log4js = require('log4js');
 
-const SERVER_CONFIG = require('../../../../conf/server');
+const SERVER_CONFIG = require('../../../conf/server');
 const JSON_PATH = SERVER_CONFIG.public.CONF_DIR + '/log4js.json';
 const LOG_DIR = SERVER_CONFIG.public.LOGS_DIR;
 
 class Log {
 	constructor() {
 		//加载log4js配置
-		log4js.configure(JSON_PATH);
 		if(!fs.existsSync(LOG_DIR)) {
 			fs.mkdirSync(LOG_DIR);
 		}
 		this._defaults = {};
+		log4js.configure(JSON_PATH);
 	}
 
 	getLogger(name) {
