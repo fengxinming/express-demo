@@ -33,9 +33,16 @@ app.use(cookieParser());
 
 // 开发环境直接读取stylus
 if(NODE_ENV === 'development') {
-  app.use(require('stylus').middleware({
+  const stylus = require('stylus');
+  const nib = require('nib');
+  app.use(stylus.middleware({
     src: serverCfg.CLIENT_DIR,
-    dest: serverCfg.STATIC_DIR
+    dest: serverCfg.STATIC_DIR,
+    compile: function(str, path) {
+      return stylus(str)
+        .set('filename', path)
+        .use(nib());
+    }
   }));
 }
 
@@ -45,6 +52,7 @@ app.use(express.static(serverCfg.STATIC_DIR));
 //添加路由
 const routes = require('./routes');
 app.use('/', routes);
+Object.assign(app.locals, configuration.get('locals'));
 
 // 404异常捕捉
 app.use(function(req, res, next) {

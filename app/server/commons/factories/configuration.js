@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const extend = require('extend');
 const SERVER_CONFIG = require('../../../conf/server');
 
 const CONFIG_DIR = SERVER_CONFIG.public.CONF_DIR;
@@ -14,9 +13,8 @@ class Config {
 		(fs.readdirSync(CONFIG_DIR) || []).forEach(function (file) {
 			let fileNameParser = path.parse(file);
 			if(fileNameParser.ext === '.js') {
-				let obj = require(path.normalize(CONFIG_DIR + path.sep + file));
-				let pub = Object.create(obj.public);
-				defaults[fileNameParser.name] = extend(pub, Object.create(obj[NODE_ENV]));
+				let obj = require(path.normalize(CONFIG_DIR + '/' + file));
+				defaults[fileNameParser.name] = Object.assign({}, obj.public, obj[NODE_ENV]);
 			}
 		});
 	}

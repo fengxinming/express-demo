@@ -1,0 +1,520 @@
+extends partials/layout
+
+block content
+  .header
+    .container.top
+      span.menu
+      .right-area
+        .search
+          a.btn-search.fix(href='javascript:;')
+          .search-area
+            form
+              input#bdcsMain(type='text', placeholder='请输入要搜索的关键字')
+        .nav.clearfix
+          ul.main-nav.clearfix
+            li
+              a(href='/') 首页
+            li.dropdown(data-desc='以价值创造成就金融报国之梦')
+              a(target='', href='/about')
+                | 关于我们
+                span.arrow-down
+              .pop-layer
+                table
+                  tr
+                    td.ieclass(width='60%')
+                      ul.dropdown-menu
+                        li.pop-right(data-desc='我们是专注于中国优质中小企业及富裕人群，拥有领先创新能力的资本市场综合服务商')
+                          a(target='', href='/about/intro') 公司简介
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='以证券业务为核心，业务跨越境内外的金融控股集团')
+                          a(target='', href='/about/structure') 公司组成
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='')
+                          a(target='', href='/about/manager') 公司高管
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='自1994年开始，公司主要经营指标已连续20年稳居国内十大券商行列')
+                          a(target='', href='/about/achieve') 辉煌业绩
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='我们为您奉上电子年册，让您全方位解读广发证券')
+                          a(target='', href='/about/yearbook') 电子年册
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='在这里，您可以随时关注广发证券的最新动态')
+                          a(target='', href='/about/news')
+                            | 公告动态
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='在这里，您可以随时关注广发证券的最新动态')
+                              a(target='', href='/about/news?tab=0') 业务公告
+                            li(data-desc='在这里，您可以随时关注广发证券的最新动态')
+                              a(target='', href='/about/news?tab=1') 公司动态
+                            li(data-desc='在这里，您可以随时关注广发证券的最新动态')
+                              a(target='', href='/about/news?tab=2') 采购招标
+                        li.pop-right(data-desc='成长中的全球经营网络，将进一步提升我们的能力')
+                          a(target='_blank', href='http://www.gf.com.cn/branches/yywdServices.html')
+                            | 联系我们
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='成长中的全球经营网络，将进一步提升我们的能力，以便更好地帮助我们的客户实现他们的目标')
+                              a(target='_blank', href='http://www.gf.com.cn/branchNotice.do?method=getDefaultBranchNoticeList ') 分支机构公告
+                        li.pop-right(data-desc='广聚爱，发于心。广发证券一直践行社会责任，致力于公益事业，让温暖无处不在')
+                          a(target='_blank', href='http://www.gf.com.cn/gyjj/index.jsp') 公益基金
+                          ul.pop-right-menu
+                    td(width='40%')
+                      .menu-desc
+                        p
+            li.dropdown(data-desc='广发证券为客户提供全面的金融解决方案')
+              a(target='', href='/business')
+                | 我们的业务
+                span.arrow-down
+              .pop-layer
+                table
+                  tr
+                    td.ieclass(width='60%')
+                      ul.dropdown-menu
+                        li.pop-right(data-desc='我们拥有中国证券领先的富裕客户服务能力，投资顾问团队人数位居行业前列，拥有一只获得国际财富管理协会（AIWM）颁发的财富管理师资格的专业团队')
+                          a(target='', href='/business/economy')
+                            | 经纪业务
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='根据客户的投资需求与投资规模，为客户量身定制服务体系')
+                              a(target='', href='/business/economy/serve') 分级服务
+                            li(data-desc='庞大的富裕客户基础和行业最大的投资顾问队伍，奠定财富管理业务的市场领先地位')
+                              a(target='', href='/business/economy/advan') 业务优势
+                        li.pop-right(data-desc='企业的首选投资银行，具有强大的企业客户业务综合服务能力')
+                          a(target='', href='/business/bank')
+                            | 投资银行
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='秉承“投行创造价值”的理念，密切关注客户金融需求并为其量身定制个性化、全面的金融解决方案')
+                              a(target='', href='/business/bank/intro') 业务介绍
+                            li(data-desc='我们建立了强大的销售网络，依托超400人的优秀的专业团队，通过稳健有效的经营管理，保持行业持续领先的骄人业绩')
+                              a(target='', href='/business/bank/advan') 业务优势
+                            li(data-desc='卓越的客户服务是投行业务发展的基石，我们通过深入调研，为客户制订发展战略，科学运用资本市场工具实现客户长远、持续、高速发展。')
+                              a(target='', href='/business/bank/case') 典型案例
+                            li(data-desc='')
+                              a(target='', href='/business/bank/news') 业务公告
+                        li.pop-right(data-desc='专为机构投资者提供研究报告及定制化的投资研究服务，卓越的研究能力在世界享有盛誉')
+                          a(target='', href='/business/security')
+                            | 证券研究
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='我们为社保基金、保险公司、基金公司、私募基金、财务公司、证券公司及其他机构投资者提供研究报告及定制化的投资研究服务')
+                              a(target='', href='/business/security/intro') 业务介绍
+                            li(data-desc='我们卓越的研究能力在世界享有盛誉')
+                              a(target='', href='/business/security/advan') 业务优势
+                            li(data-desc='')
+                              a(target='', href='/business/security/news') 推荐资讯
+                        li.pop-right(data-desc='充足的资金、丰富的券源、专业的团队，为客户提供投、融资整体解决方案')
+                          a(target='', href='/business/finance')
+                            | 证券金融
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='证券金融专业团队，为客户提供全方位的、一站式的证券信用融资、融券解决方案')
+                              a(target='', href='/business/finance/intro') 业务介绍
+                            li(data-desc='证券金融部凭借专业化人才团队，秉持“专业、专心、专为您”的服务精神，致力于满足客户多元化的投、融资需求')
+                              a(target='', href='/business/finance/advan') 业务优势
+                            li(data-desc='证券金融业务相关知识，教你快速上手')
+                              a(target='', href='/business/finance/knowlege') 业务知识
+                            li(data-desc='')
+                              a(target='', href='/business/finance/news') 业务公告
+                        li.pop-right(data-desc='广发证券为首批获得托管资格券商，依托公司金融集团优势、专业高效的服务水平，为广大资产管理人提供全面、优质的一站式资产托管服务')
+                          a(target='', href='/business/asset')
+                            | 资产托管
+                            span.trg-right
+                          ul.pop-right-menu
+                            li(data-desc='我们拥有全方位安全监控设施、稳定高效的托管业务系统、完善的业务管理制度和优秀的托管业务团队')
+                              a(target='', href='/business/asset/intro') 业务介绍
+                            li(data-desc='我们全心全意为客户提供风险管理与绩效评估等个性化、定制式的托管增值服务')
+                              a(target='', href='/business/asset/products') 产品展示
+                            li(data-desc='')
+                              a(target='', href='/business/asset/verify') 净值公告
+                        li.pop-right(data-desc='传播财智之道，助享厚富人生')
+                          a(target='_blank', href='http://www.gf.com.cn/assetManage/index.html') 资产管理
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='我们在中国16个省及直辖市，设有26家期货营业部，152家证券营业部拥有期货IB业务资格，提供全面的境内外期货经纪服务')
+                          a(target='_blank', href='http://www.gf.com.cn/optionsFutures/index.jsp') 期权期货
+                          ul.pop-right-menu
+                        li.pop-right(data-desc='广发证券获得首批柜台交易业务试点资格，综合实力雄厚，是产品最丰富、规模最大、客户数量最多的领先券商OTC之一')
+                          a(target='_blank', href='https://otc.gf.com.cn/') 柜台市场
+                          ul.pop-right-menu
+                    td(width='40%')
+                      .menu-desc
+                        p
+            li
+              a(href='http://ir.gf.com.cn/', target='_blank') 投资者关系
+            li
+              a(href='http://edu.gf.com.cn/', target='_blank') 投资者教育
+            li
+              a(href='http://www.gf.com.cn/job/index.html', target='_blank') 人才招聘
+            li.dropdown.download
+              a(href='javascript:;')
+                | 软件下载
+                span.arrow-down
+              .down-div
+                a(href='https://store.gf.com.cn/portal/apppromo?_gfsrc=newgfw_x_x_pc', target='_blank') 手机证券
+                a(href='http://store.gf.com.cn/terminal/index.html?_gfsrc=newgfw_x_x_pc', target='_blank') 网上交易
+                a(href='https://trade.gf.com.cn/', target='_blank') 页面交易
+                a(href='https://store.gf.com.cn/portal/financingapp?gfsrc=gfweb___', target='_blank') 广发理财
+            li.en-link
+              a(href='http://en.gf.com.cn/', target='_blank') English
+      a.logo.fix(href='/index')
+    .snav
+      ul
+        li
+          a(href='/') 首页
+        li.sm-pop-right
+          a(href='javascript:;')
+            | 关于我们
+            span.trg-right
+          ul.sm-pop-right-menu
+            li
+              a(href='/about') 栏目首页
+            li
+              a(href='/about/intro') 公司简介
+            li
+              a(href='/about/structure') 公司组成
+            li
+              a(href='/about/manager') 公司高管
+            li
+              a(href='/about/achieve') 辉煌业绩
+            li
+              a(href='/about/yearbook') 电子年册
+            li
+              a(href='/about/news') 公告动态
+            li
+              a(href='http://www.gf.com.cn/branches/yywdServices.html') 联系我们
+            li
+              a(href='http://www.gf.com.cn/gyjj/index.jsp') 公益基金
+        li.sm-pop-right
+          a(href='javascript:;')
+            | 我们的业务
+            span.trg-right
+          ul.sm-pop-right-menu
+            li
+              a(href='/business') 栏目首页
+            li
+              a(href='/business/economy') 经纪业务
+            li
+              a(href='/business/bank') 投资银行
+            li
+              a(href='/business/security') 证券研究
+            li
+              a(href='/business/finance') 证券金融
+            li
+              a(href='/business/asset') 资产托管
+            li
+              a(href='http://www.gf.com.cn/assetManage/index.html') 资产管理
+            li
+              a(href='http://www.gf.com.cn/optionsFutures/index.jsp') 期权期货
+            li
+              a(href='https://otc.gf.com.cn/') 柜台市场
+        li
+          a(href='http://ir.gf.com.cn/') 投资者关系
+        li
+          a(href='http://edu.gf.com.cn/') 投资者教育
+        li
+          a(href='http://www.gf.com.cn/job/index.html') 人才招聘
+        li.sm-pop-right
+          a(href='javascript:;')
+            | 软件下载
+            span.trg-right
+          ul.sm-pop-right-menu
+            li
+              a(href='https://store.gf.com.cn/mobile/other/app-5.1-promo?_gfsrc=newgfw_x_x_mobile', target='_blank') 手机证券
+            li
+              a(href='http://store.gf.com.cn/terminal/index.html?_gfsrc=newgfw_x_x_pc', target='_blank') 网上交易
+            li
+              a(href='https://store.gf.com.cn/app-invest-web/?_gfsrc=gfweb___#/webend-download', target='_blank') 广发理财
+        li.en-link
+          a(href='http://en.gf.com.cn/', target='_blank') English
+  .site-wrapper
+    .banner.index-banner(style='background-color:#d99d46; background-image:url(/file/download?file_id=5732fbbf6cf3de7020010c16)')
+      .mask-div(style='background-color:rgba(199,145,66,0.7)')
+      a.link-area(href='http://edu.gf.com.cn/special/detail/573178039070b2332000c6dd', target='_blank')
+      .container.pr
+        .banner-desc
+          .ban-ad 广发证券投资者教育基地 · 荣获
+          h1
+            | 证监会首批命名的
+            br
+            | 全国投资者教育基地称号
+    .page-section.grey
+      #service-platform.module.grid-module
+        .row
+          .col.span-8.sm-span-12
+            a.grid.grid2x1.grid-img-cont.xs-grid1x2(href='https://store.gf.com.cn/portal/index?_gfsrc=newgfw_x_x_home', target='_blank')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565d10551c2b73262200003f', alt='')
+              .content-wrapper
+                h3 易淘金
+                p.info-intro 零售客户线上综合服务平台，致力于提供专业、专属、贴心的互联网理财服务！
+                .pb-info
+                  p
+                    span(style='font-size:16px;') •
+                    | 金融超市：2000多只线上精选理财产品
+                    br
+                    span(style='font-size:16px;') •
+                    | 淘金钱包：领先的互联网余额理财应用
+                    br
+                    span(style='font-size:16px;') •
+                    | 淘金市场：业内首个金融产品跳蚤市场
+          .col.span-4.sm-span-12
+            #service-grid.row
+              .col.span-12.sm-span-4.xs-span-12.no-padding.sm-no-padding.web-show
+                .grid.grid3x1
+                  .cont-wrapper
+                    a.icon(href='https://store.gf.com.cn/portal/ldy/ldyaccount?channel=gf00001', target='_blank')
+                      i.icon.iconfont 
+                      em 网上开户
+              .col.span-12.sm-span-4.xs-span-12.no-padding.sm-no-padding.phone-show
+                .grid.grid3x1
+                  .cont-wrapper
+                    a.icon(href='https://store.gf.com.cn/mobile/other/scancode?channel=gf00002&_gfsrc=newgfw_x_x_mobile', target='_blank')
+                      i.icon.iconfont 
+                      em 网上开户
+              .col.span-12.sm-span-4.xs-span-12.no-padding.sm-no-padding.bg-grey.web-show
+                .grid.grid3x1
+                  .cont-wrapper
+                    a.icon(href='https://store.gf.com.cn/portal/apppromo?_gfsrc=newgfw_x_x_pc', target='_blank')
+                      i.icon.iconfont 
+                      em 手机证券
+              .col.span-12.sm-span-4.xs-span-12.no-padding.sm-no-padding.bg-grey.phone-show
+                .grid.grid3x1
+                  .cont-wrapper
+                    a.icon(href='https://store.gf.com.cn/mobile/other/app-5.1-promo?_gfsrc=newgfw_x_x_mobile', target='_blank')
+                      i.icon.iconfont 
+                      em 手机证券
+              .col.span-12.sm-span-4.xs-span-12.no-padding.sm-no-padding
+                .grid.grid3x1
+                  .cont-wrapper
+                    a.icon(href='http://store.gf.com.cn/jys_desktop/index.html?channel=gf00002&_gfsrc=newgfwjys_x_x_pc', target='_blank')
+                      i.icon.iconfont 
+                      em 有问必答
+    .page-section
+      #news-events.module.grid-module
+        .row
+          .col.span-6.sm-span-12
+            .grid.grid2x1.xs-grid1x2
+              .note-pic
+                img.lazy(data-original='/images/gfindex/notes.jpg', alt='')
+              .list-content
+                h3 业务公告
+                ul
+                  li
+                    a(href='/article/detail/571f21f6ee48324a6b00ceba') 【IPO专栏】四方冷链IPO项目承诺函、关联关系核查表填报入口及重要提示
+                  li
+                    a(href='/article/detail/5719f4e202fdfb6865000069') 广发证券金融产品销售目录
+                  li
+                    a(href='/article/detail/57198a65792376562e0059e9') 2016年劳动节期间港股通交易日安排的公告
+                  li
+                    a(href='/article/detail/57182db2f130a4f633001d6a') 证监会发布风险警示：勿参与网络二元期权交易
+                  li
+                    a(href='/article/detail/5710a6e1a1898ee94b034662') 关于公司部分系统4月16日应急演练的公告
+                a.more(href='/about/news') 更多>
+          .col.span-6.sm-span-12
+            .grid.grid2x1.xs-grid1x2
+              .note-pic
+                img.lazy(data-original='/images/gfindex/news.jpg', alt='')
+              .list-content
+                h3 公司动态
+                ul
+                  li
+                    a(href='/article/detail/573144c96076fe7d2000b97a') “广发证券投资者教育基地”荣获证监会首批命名的全国投资者教育基地称号
+                  li
+                    a(href='/article/detail/572081cadb29be6d060001a3') 广发证券设百万奖金 助大学生微创业行动再起航
+                  li
+                    a(href='/article/detail/5710a51f415462a95103474d') 广发资管员工持股计划规模与业绩抢眼
+                  li
+                    a(href='/article/detail/56f48b49bd853c4f6903d8a1') 广发证券首推券商私人银行服务
+                  li
+                    a(href='/article/detail/56f0bd38c0cfa86569030486') 新浪广发相携手 大数据量化资管产品将问世
+                a.more(href='/about/news?tab=1') 更多>
+    .page-section.grey
+      #business-intro.module.grid-module
+        .row
+          .col.span-8.sm-span-12.xs-span-12
+            .row
+              .col.span-12.no-padding.padding-bottom
+                a.grid.grid2x1.xs-grid1x2(href='/about', target='_self')
+                  .images-wrapper
+                    img.lazy(data-original='/file/download?file_id=565fe1fa4a30296012000043', alt='')
+                  .content-wrapper
+                    h3 关于广发
+                    p.info-intro 拥有领先创新能力的资本市场综合服务商，自1994年起公司主要经营指标已连续20年稳居国内十大券商行列
+                    .pb-info
+                      | 以证券业务为核心，业务跨越境内外的金融控股集团
+            #sigle-one.row.no-padding
+              .col.span-6.xs-span-12.no-left-padding.xs-no-padding
+                a.grid(href='http://www.gf.com.cn/infoCenter/index.html', target='_blank')
+                  .content-wrapper
+                    h3 资讯中心
+                    p.info-intro 全方位提供财经动态、重要新闻点评等基础资讯或盘中播报，力求实用丰富。让客户最及时的获取综合财经新闻和金融市场资讯
+                    .pb-info
+                      p
+              #rzyw.col.span-6.xs-span-12.no-right-padding.xs-no-padding
+                a.grid(href='http://edu.gf.com.cn/', target='_blank')
+                  .content-wrapper
+                    strong
+                      img.fix(src='/file/download?file_id=565fe5de4a302960120000ba', alt='')
+                    h3 投教基地
+                    p.info-intro 祝贺“广发证券投资者教育基地”荣获证监会首批命名的全国投资者教育基地称号
+                    .pb-info
+                      p
+          .col.span-4.sm-span-12.xs-span-12
+            a.grid.grid1x2.sm-grid2x1.xs-grid1x2(href='/business/economy', target='_self')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe29b4a30296012000049', alt='')
+              .content-wrapper
+                h3 经纪业务
+                p.info-intro 拥有中国证券领先的富裕客户服务能力，投资顾问团队人数位居行业前列,团队相当人员具备财富管理师资格
+                .pb-info
+                  | 金融创新，不断优化
+        #index-bot-top.row.no-padding-top
+          #market.col.span-4.sm-span-12
+            a.grid.grid1x2.sm-grid2x1.xs-grid1x2(href='/business/bank', target='_self')
+              .market-pic
+                img.fix(src='/file/download?file_id=565fe5ad4a302960120000b1', alt='')
+              .content-wrapper
+                h3 投资银行
+                p.info-intro 强大的销售网络，依托超400人的优秀的专业团队，保持行业持续领先的骄人业绩，全方位为客户提供如下服务
+                .pb-info
+                  p
+                    | •股权融资   •债权融资
+                  p
+                    | •兼并收购  •财务顾问
+                  p
+                    | •场外市场   •创新融资
+                  p
+                  p
+                    | 更多 
+                    strong IPO专栏 
+                    | 及 
+                    strong 辅导公告
+                    | ，请点击.....
+          .col.span-4.sm-span-12
+            a.grid.grid1x2.sm-grid2x1.xs-grid1x2(href='/business/security', target='_self')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe30b4a3029601200005b', alt='')
+              .content-wrapper
+                h3 证券研究
+                p.info-intro 我们卓越的研究能力在世界享有盛誉，专为机构投资者提供研究报告及定制化的投资研究服务
+                .pb-info
+                  | 《新财富》最佳分析师评选，屡获殊荣
+          .col.span-4.sm-span-12
+            a.grid.grid1x2.sm-grid2x1.xs-grid1x2(href='/business/finance', target='_self')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe2dc4a30296012000055', alt='')
+              .content-wrapper
+                h3 证券金融
+                p.info-intro 证券金融部凭借专业化人才团队，秉持“专业、专心、专为您”的服务精神，致力于满足客户多元化的投融资需求
+                .pb-info
+                  div
+                    | •融资融券  • 约定购回
+                  div
+                    | •股票质押  • 融易通
+                  div
+                    | •简约通      •股票激励融资
+        #index-bot.row.no-padding-top
+          .col.span-4.sm-span-12
+            a.grid.sm-grid3x1.xs-grid3x2(href='/business/asset', target='_self')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe32e4a30296012000061', alt='')
+              .content-wrapper
+                h3 资产托管
+                p.info-intro 全方位安全监控设施、稳定高效的托管系统、优秀专业的业务团队
+                .pb-info
+                  p
+                    font(face='Menlo, monospace')
+                      span(style='white-space: pre-wrap;')  
+          .col.span-4.sm-span-12
+            a.grid.sm-grid3x1.xs-grid3x2(href='http://www.gf.com.cn/gyjj/index.jsp', target='_blank')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe34e4a3029601200006f', alt='')
+              .content-wrapper
+                h3 广发公益
+                p.info-intro 广聚爱，发于心。广发证券践行社会责任，为公益事业不断努力
+                .pb-info
+                  p
+                    font(face='Menlo, monospace')
+                      span(style='white-space: pre-wrap;')  
+          .col.span-4.sm-span-12
+            a.grid.sm-grid3x1.xs-grid3x2(href='http://www.gf.com.cn/bussinesshall/iptv/iptv.html', target='_blank')
+              .images-wrapper
+                img.lazy(data-original='/file/download?file_id=565fe3714a30296012000079', alt='')
+              .content-wrapper
+                h3 财富频道
+                p.info-intro 荟聚顶级分析师智慧，打造专享的财经证券节目，专家面对面
+  .footer
+    .container.foot
+      .ft-nav
+        ul.clearfix
+          li
+            a(href='/about') 关于广发
+          li
+            a(href='http://www.gf.com.cn/branches/yywdServices.html', target='_blank') 联系我们
+          li
+            a(href='http://www.miibeian.gov.cn', target='_blank') 资质查询
+          li
+            a(href='http://www.gf.com.cn/business/businessTsjy.jsp?whichCat=sy_wxts_tsjy', target='_blank') 投诉流程
+          li.select-link
+            select(onchange='toLinkURL(this.value)', name='link')
+              option(value='') ---------子公司网站------------------
+              option(value='http://www.gfgroup.com.hk') 广发控股(香港)
+              option(value='http://www.gfsecurities.ca/') 广发加拿大
+              option(value='http://www.gfqh.com.cn/') 广发期货
+              option(value='http://www.gffunds.com.cn/') 广发基金
+              option(value='http://www.gfinvestment.cn') 广发信德
+              option(value='') ---------友情链接-------------------
+              option(value='http://www.csrc.gov.cn')  中国证券监督管理委员会
+              option(value='http://edu.sse.com.cn/newedu/home/home.shtml')  上海证券交易所投资者教育网站
+              option(value='http://www.sse.com.cn')  上海证券交易所
+              option(value='http://www.szse.cn')  深圳证券交易所
+              option(value='http://www.chinaclear.cn/')  中国证券登记结算公司
+              option(value='http://www.sipf.com.cn')  中国证券投资者保护网
+              option(value='http://www.cfachina.org')  中国期货业协会
+              option(value='http://www.amac.org.cn')  中国证券投资基金业协会
+              option(value='http://www.capco.org.cn/capco/')  中国上市公司协会
+              option(value='http://www.sac.net.cn/hyfw/zqjftj/zxsq/')  证券业协会证券纠纷调解在线申请平台
+              option(value='https://ebank.spdb.com.cn/fmall/#/welcome')  浦发银行金融超市
+              option(value='http://www.cs.com.cn')  中国证券报
+              option(value='http://www.stcn.com')  证券时报
+              option(value='http://paper.cnstock.com')  上海证券报
+              option(value='http://zqrb.ccstock.cn')  证券日报
+              option(value='http://www.hexun.com/')  和讯网
+              option(value='http://www.ourtbe.com')  天地网
+      .hotline
+        p.hot 全国统一客服热线
+        p.hot-time 交易日8:30-21:00
+        p.tel-num
+          i.fix
+          | 95575
+      .share
+        .bdsharebuttonbox
+          a.share-title 分享到：
+          a.bds_tsina.fix(href='#', data-cmd='tsina', title='分享到新浪微博')
+          a.bds_qzone.fix(href='#', data-cmd='qzone', title='分享到QQ空间')
+          a.bds_sqq.fix(href='#', data-cmd='sqq', title='分享到QQ好友')
+          a.bds_weixin.fix(href='#', data-cmd='weixin', title='分享到微信')
+          a.bds_more.fix(href='#', data-cmd='more')
+        script.
+          window._bd_share_config = {
+            "common": {
+              "bdSnsKey": {"tsina": "新浪", "tqq": "腾讯"},
+              "bdText": "",
+              "bdMini": "2",
+              "bdMiniList": false,
+              "bdPic": "",
+              "bdStyle": "2",
+              "bdSize": "16"
+            }, "share": {}
+          };with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+  .copyright
+    span 粤ICP备11070729号
+    span 广发证券股份有限公司版权所有
+    span
+      | Copyright © 2000-
+      em#curYear
+      |  All Rights Reserved
+  a#toTop
+  script(src='http://cdn.gfzq.cn/gfw/scripts/vendor-e71863e2.js')
+  script(src='http://cdn.gfzq.cn/gfw/scripts/scripts-10f2ff8b.js')
