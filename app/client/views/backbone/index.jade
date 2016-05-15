@@ -1,0 +1,31 @@
+extends ../partials/layout
+
+append css
+  link(rel='stylesheet', href='#{CONTEXT_PATH}/css/backbone.css')
+  
+append js
+  script(src='#{CONTEXT_PATH}/js/backbone/app.js')
+  
+block content
+  .container
+    a(href='https://github.com/duckbox')
+      img(style='position: absolute; top: 0; right: 0; border: 0;', src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png', alt='Fork me on GitHub')
+    #wrap
+      h2#basket-message
+        | You have
+        span#basket 0
+        |  items in your basket
+      ul#default-item-list
+      table#shopping-cart
+        tbody#shopping-list
+        tfoot
+          tr
+            td#total(colspan='4') 0.00
+    script#tmp-shoppingListItem(type='text/template').
+      <a class="name"><%= title %></a>
+      <span class="price"><%= price.toFixed(2) %></span>
+    script#tmp-shoppingCartItem(type='text/template').
+      <td class="name"><%= title %></td>
+      <td class="quantity-total"><%= quantity %> </td>
+      <td><a class="quantity" data-type="increase"><a class="quantity" data-type="decrease"></a> </a></td>
+      <td class="sub-total"><%= total.toFixed(2) %></td>

@@ -1,0 +1,38 @@
+.footer
+	.container.foot
+		.ft-nav
+			ul.clearfix
+				li
+					a(href='#', target='_blank') 关于我们
+				li
+					a(href='#', target='_blank') 联系我们
+				li
+					a(href='#', target='_blank') 加入我们
+				li
+					a(href='#', target='_blank') 友情链接
+		.share
+			.bdsharebuttonbox
+				span.share-title 分享到：
+				a.bds_tsina.fix(href='#', data-cmd='tsina', title='分享到新浪微博')
+				a.bds_qzone.fix(href='#', data-cmd='qzone', title='分享到QQ空间')
+				a.bds_sqq.fix(href='#', data-cmd='sqq', title='分享到QQ好友')
+				a.bds_weixin.fix(href='#', data-cmd='weixin', title='分享到微信')
+				a.bds_more.fix(href='#', data-cmd='more')
+			script.
+				window._bd_share_config = {
+					"common": {
+						"bdSnsKey": {"tsina": "新浪", "tqq": "腾讯"},
+						"bdText": "",
+						"bdMini": "2",
+						"bdMiniList": false,
+						"bdPic": "",
+						"bdStyle": "2",
+						"bdSize": "16"
+					}, "share": {}
+				};with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+.copyright
+	span
+		| Copyright © 1970-
+		em= (new Date).getFullYear()
+		|  All Rights Reserved
+a#toTop

@@ -2,12 +2,6 @@
 
 const gulp = require('gulp');
 
-//服务启动 修改代码自动重启
-require('./task/gulp/develop');
-
-//livereload
-const livereload = require('./task/gulp/livereload');
-
 //监听gulpfile的改变
 const os = require('os');
 const spawn = require('child_process').spawn;
@@ -25,8 +19,13 @@ gulp.task('auto-reload', function() {
 //	restart();
 });
 
-gulp.task('watch', function() {
-	livereload.watch();
-});
+//服务启动 修改代码自动重启
+require('./task/gulp/develop');
 
-gulp.task('default', ['server:start', 'server:restart', 'auto-reload', 'watch']);
+//webpack打包
+require('./task/gulp/webpack');
+
+//livereload
+require('./task/gulp/livereload');
+
+gulp.task('default', ['webpack:watch', 'server:start', 'server:restart', 'auto-reload', 'livereload']);

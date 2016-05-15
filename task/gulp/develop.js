@@ -16,5 +16,5 @@ gulp.task( 'server:start', function() {
 
 // 监听文件的改变 重启服务
 gulp.task( 'server:restart', function() {
-	gulp.watch( [ './app.js', './conf/*.js', './app/*.js', './app/server/**/*.js' ], server.restart );
+	gulp.watch( [ './app.js', './app/conf/**/*.js', './app/express/**/*.js', './app/server/**/*.js' ], server.restart );
 });

@@ -1,0 +1,57 @@
+@media (min-width: 1201px)
+  .grid2x1
+    padding-bottom 48.10127%
+    font-size 1em
+    .images-wrapper
+      float left
+      width 48.10%
+      &:after
+        position absolute
+        content ' '
+        width 0px
+        height 0px
+        right 0
+        top 30px
+        border-width 14px 13px
+        border-style solid
+        border-color transparent #fff transparent transparent
+    .content-wrapper
+      width 51.90%
+      float left
+      padding 4%
+
+  #flow01, #flow002
+    .grid2x1 .content-wrapper
+      padding-top: 4%
+
+  #flow02
+    .grid2x1
+      padding-bottom: 46%
+
+    .list-content ul
+      margin: 1.8em 0 0
+      .more
+        margin-top: 2em
+
+  .grid2x1 .img-wrapper:after
+    border-bottom: 15px solid transparent
+    border-top: 15px solid transparent
+    border-right: 15px solid #fff
+    content: ""
+    height: 0
+    position: absolute
+    right: -1px
+    top: 25px
+    width: 0
+    .images-wrapper, .content-wrapper
+      float: left
+
+  .container
+    max-width 1200px
+
+  .banner
+    width 100%
+    background-repeat no-repeat
+    background-position center top
+    background-size cover
+    height 380px

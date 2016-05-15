@@ -26,10 +26,10 @@ module.exports = {
     VIEWS_DIR: path.join(__dirname, '../client/views'),
 
     //日志文件
-    LOGS_DIR: path.join(__dirname, '../logs'),
+    LOGS_DIR: path.join(__dirname, '../../logs'),
 
     //静态文件目录
-    STATIC_DIR: path.join(__dirname, '../public'),
+    STATIC_DIR: path.join(__dirname, '../../public'),
 
     //livereload
     livereload: {
@@ -37,7 +37,7 @@ module.exports = {
       disabled: false,
 
       //livereload端口
-      PORT: 35729
+      port: 35729
     },
 
     //session配置

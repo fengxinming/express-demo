@@ -1,12 +1,12 @@
 'use strict';
 const request = require('supertest');
 
-const cfgUtil = require('./configuration');
+const cfgUtil = require('../app/server/commons/factories/configuration');
 const serverCfg = cfgUtil.get('server');
 
 //服务没有启动时，用这个；如果启动了就用下面那行
-const app = require('../app/koa');
-let agent = request(app.callback());
+const app = require('../app/express');
+let agent = request(app);
 //let agent = request('http://127.0.0.1:' + serverCfg.PORT);
 
 const fs = require('fs');

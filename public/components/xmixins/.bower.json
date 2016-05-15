@@ -1,0 +1,59 @@
+{
+  "name": "xmixins",
+  "version": "0.5.0",
+  "homepage": "https://github.com/mytcer/xmixins",
+  "authors": [
+    "mytcer"
+  ],
+  "description": "A css mixin library，which compatible with less, sass and stylus ！",
+  "main": "index.[less|scss|styl]",
+  "keywords": [
+    "stylus",
+    "less",
+    "sass",
+    "mixin",
+    "css3",
+    "css",
+    "compass",
+    "bower",
+    "component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "tmp",
+    "src",
+    "doc",
+    "tasks",
+    "fragment",
+    "images",
+    ".bowerrc",
+    ".jshintrc",
+    ".jshintignore",
+    ".gitignore",
+    ".sass-cache",
+    "bower.json",
+    ".bower.json",
+    "component.json",
+    "package.json",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "CHANGELOG.md",
+    "README.md",
+    "TODO.md"
+  ],
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.0",
+    "commit": "6002bd20095ad0a3e3b80e933f1b4118dd81da86"
+  },
+  "_source": "https://github.com/mytcer/xmixins.git",
+  "_target": "~0.5.0",
+  "_originalSource": "xmixins",
+  "_direct": true
+}

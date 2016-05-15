@@ -2,43 +2,43 @@
   "appenders": [
     {
       "type": "dateFile",
-      "filename": "./app/logs/app.log",
+      "filename": "./logs/app.log",
       "category": "app",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/http.log",
+      "filename": "./logs/http.log",
       "category": "http",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/router.log",
+      "filename": "./logs/router.log",
       "category": "router",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/service.log",
+      "filename": "./logs/service.log",
       "category": "service",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/request.log",
+      "filename": "./logs/request.log",
       "category": "request",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/proxy.log",
+      "filename": "./logs/proxy.log",
       "category": "proxy",
       "pattern": "-yyyy-MM-dd"
     },
     {
       "type": "dateFile",
-      "filename": "./app/logs/middleware.log",
+      "filename": "./logs/middleware.log",
       "category": "middleware",
       "pattern": "-yyyy-MM-dd"
     }

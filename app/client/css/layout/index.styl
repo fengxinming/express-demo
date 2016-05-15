@@ -1,0 +1,28 @@
+@require 'header.styl'
+@require 'footer.styl'
+
+.container
+  margin-right auto
+  margin-left auto
+  &:after
+    clear both
+
+.container:before, .container:after
+  content " "
+  display table
+
+#toTop
+  position fixed
+  background url($CONTEXT_PATH/images/commons/totop.png)
+  color #fff
+  display block
+  _display none !important
+  width 50px
+  height 50px
+  right 10px
+  bottom 10px
+  _bottom auto
+  cursor pointer
+  z-index 9999
+  &:hover
+    background url($CONTEXT_PATH/images/commons/totop-hover.png)

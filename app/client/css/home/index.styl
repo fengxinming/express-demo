@@ -1,0 +1,419 @@
+.grey
+  background-color #ededed !important
+
+.light-grey
+  background-color #f2f2f2 !important
+
+.bg-grey
+  .grid3x1
+    background-color #f7f7f7
+
+.white
+  background #fff !important
+
+.trg-right
+  display inline-block
+  width 0
+  height 0
+  margin-left 2px
+  vertical-align middle
+  color #bbb
+  border-left 5px dashed
+  border-left 5px solid \9
+  border-top 5px solid transparent
+  border-bottom 5px solid transparent
+
+.page-section
+  width 100%
+  clear both
+  margin 0
+  padding 4% 0
+
+.module
+  padding 0 !important
+  max-width 1230px
+  margin auto
+
+.grid-module
+  .row
+    padding-top 2.5%
+    overflow visible
+    &:first-of-type
+      padding-top 0
+    &:after
+      content ""
+      display table
+      clear both
+    &.no-padding
+      padding 0
+    &.no-padding-top
+      padding-top 0px
+  .col
+    float left
+    padding 1.25%
+    box-sizing border-box
+    overflow hidden
+    &.no-padding
+      padding 0
+    &.no-left-padding
+      padding-left 0
+      padding-right 1.75%
+    &.no-right-padding
+      padding-right 0
+      padding-left 1.75%
+    &.padding-bottom
+      padding-bottom 1.25%
+  .span-1
+    width 8.33333%
+  .span-2
+    width 16.66667%
+  .span-3
+    width 25%
+  .span-4
+    width 33.33333%
+  .span-5
+    width 41.66667%
+  .span-6
+    width 50%
+  .span-7
+    width 58.33333%
+  .span-8
+    width 66.66667%
+  .span-9
+    width 75%
+  .span-10
+    width 83.33333%
+  .span-11
+    width 91.66667%
+  .span-12
+    width 100%
+  .grid
+    background-color #fff
+    display block
+    overflow hidden
+    width 100%
+    float left
+    position relative
+    height 0
+    padding-bottom 100%
+    border-bottom 1px solid #e0e0e0
+    &:after
+      -webkit-transition background-color 120ms linear
+      transition background-color 120ms linear
+      background-color transparent
+      content ""
+      height 100%
+      left 0
+      position absolute
+      top 0
+      visibility inherit
+      width 100%
+    &:hover
+      &:after
+        background-color rgba(0, 0, 0, 0.1)
+    &.no-hover
+      &:after
+        display none
+  .blue-bg
+    background-color #2a8cc4
+    .label
+      span
+        background #056da8
+        color #fff
+    h3
+      color #fff
+    p
+      color #aed4ea
+  .grid2x1
+    padding-bottom 48.10127%
+  .grid1x2
+    padding-bottom 205.50%
+  .grid3x1
+    padding-bottom 33.4226%
+  .grid3x2
+    padding-bottom 66.667%
+  .grid3x4
+    padding-bottom 133.333%
+
+  .grid-img-cont
+    .img-wrapper
+      float left
+      width 50%
+      position relative
+      img
+        width 100%
+
+    .cont-wrapper
+      float left
+      padding 7%
+      width 36%
+      font-size 1em
+      position relative
+      h3
+        font-size 2em
+        color #333
+        margin-bottom .8em
+        position relative
+        &:after
+          position absolute
+          font-size 5px
+          height 4px
+          width 26px
+          border-radius 2px
+          background #8eb5de
+          left 1px
+          bottom -12px
+          content ''
+      p
+        font-size 1.1em
+        line-height 1.5em
+        color #666
+        margin-bottom .8em
+
+//图片外包裹
+.images-wrapper
+  width 48.10%
+  position relative
+  img
+    width 100%
+
+//内容区
+.content-wrapper
+  padding 8.5% 10% 8.5% 8.5%
+  width 51.9%
+  box-sizing border-box
+  position relative
+  .label
+    font-size 1em
+    span
+      padding 0em 1em
+      background #8eb5de
+      color #fff
+      display inline-block
+      height 1.7em
+      line-height 1.7em
+  h3
+    font-size 2em
+    line-height 1.3em
+  .info-intro
+    color #666
+    line-height 1.5em
+    font-size 1.14em
+  .pb-time, .pb-info, .info-ul
+    font-size 1em
+    color #999
+    line-height 1.5em
+    text-align left
+    a
+      color #999
+  .dots-before
+    font-size 1em
+    line-height 1.5em
+    span
+      display inline-block
+      position relative
+      padding-left 1em
+      width 7em
+    &:after
+      position absolute
+      top -.1em
+      left 0
+      content '.'
+      font-size 2em
+      line-height .2em
+      color #999
+  .info-ul
+    width 100%
+    li
+      width 33%
+      float left
+
+#index-bot
+  .grid
+    .content-wrapper, .images-wrapper
+      width 100%
+  #service-grid
+    border-bottom 1px solid #e0e0e0
+    font-size 1em
+    .grid
+      border 0
+      .cont-wrapper
+        position absolute
+        width 100%
+        height 100%
+      .icon
+        position relative
+        z-index 500
+
+      .content-wrapper .pb-info a
+        color #999
+
+    .web-show
+      display block
+
+    .phone-show
+      display none
+
+    .bg-grey .grid
+      background-color #f7f7f7
+
+#flow01
+  .grid3x1
+    a.icon
+      display block
+      text-align left
+      font-size 1.7em
+      padding 8.20% 0 9.20% 24.5%
+      overflow hidden
+
+      i
+        font-size 2.6em
+        color #3a89da
+        content ''
+        float left
+        margin-right 8%
+
+      em
+        display inline-block
+        line-height 2.6em
+        font-size 1.2em
+
+#flow02
+  .grid
+    border 0
+
+  .note-pic
+    float left
+    width 42.5%
+
+    img
+      width 100%
+
+  .list-content
+    float left
+    width 57.5%
+    padding-left 4.5%
+    box-sizing border-box
+    font-size 1em
+    position relative
+
+    h3
+      font-size 2em
+
+    ul
+      margin 1em 0 0
+      margin 0 \9
+      padding-top 1em \9
+      li
+        a
+          display block
+          line-height 2em
+          font-size 1em
+          color #666
+          text-decoration none
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          position relative
+          padding-left 1em
+
+          &:before
+            position absolute
+            top .8em
+            left 0
+            content ''
+            width 4px
+            height 4px
+            background url($CONTEXT_PATH/images/home/lib.png) no-repeat
+
+          &:hover
+            background #f2f2f2
+
+    .more
+      color #0096ff
+      display block
+      margin-top 1em
+
+
+  .grid:after
+    display none
+
+#flow002
+  #index-bot
+    .content-wrapper
+      width 100%
+      padding 5% 8% 4%
+
+      h3
+        margin-bottom .8em
+
+      .info-intro
+        margin-bottom .2em
+
+      &:after
+        position absolute
+        width 0px
+        height 0px
+        content ' '
+        left 30px
+        top -26px
+        border-width 13px 14px
+        border-style solid
+        border-color transparent transparent #fff
+
+#flow01, #flow002
+  font-size 1em
+
+  .content-wrapper
+    h3
+      position relative
+      margin-bottom 1.2em
+
+      &:after
+        position absolute
+        font-size 5px
+        height 4px
+        width 26px
+        border-radius 2px
+        background #8eb5de
+        left 1px
+        bottom -12px
+        content ''
+
+    .info-intro
+      margin-bottom 1em
+
+    ul
+      font-size 1.05em
+      color #999
+      list-style disc inside
+      overflow hidden
+
+      li
+        width 90px
+        line-height 1.5em
+        float left
+
+//图片
+.banner
+  background-size cover
+  .container
+    z-index 30
+    opacity 1
+  .banner-desc
+    line-height 1.5em
+    padding 10% 5% 8%
+    color #fff
+    text-align center
+    h1
+      font-size 3.5em
+      padding-bottom 3%
+    p
+      font-size 1.2em
+      line-height 1.5em
+      margin-top 1em
+
+@require 'index_1201px.styl'
+@require 'index_1001x1200.styl'
+@require 'index_601x1000px.styl'
+@require 'index_320x600px.styl'

@@ -20,7 +20,7 @@ class Config {
 	}
 
 	get(name) {
-		var _default = Object.create(this._defaults);
+		var _default = Object.assign({}, this._defaults);
 		return name ? _default[name] : _default;
 	}
 }

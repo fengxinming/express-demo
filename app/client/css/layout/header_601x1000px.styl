@@ -1,0 +1,54 @@
+@media (min-width: 601px) and (max-width: 1000px)
+  .container
+    max-width 100%
+
+  .top
+    width 100%
+    z-index 999
+    padding 0 15px
+    box-sizing border-box
+
+  .header
+    .top
+      padding 0px
+
+  .nav
+    display none
+
+  .snav
+    position absolute
+    z-index 99
+    margin-top -1px
+    ul
+      width 190px
+      min-height 290px
+      border-top 1px solid #ddd
+      li
+        line-height 36px
+        padding-left 20px
+    & > ul
+      background #f8f8f8
+      & > li
+        &:hover
+          background #ededed
+
+  .menu
+    display block
+    padding 0 20px
+    float left
+    height 60px
+    &.popup
+      border-right 1px solid #ddd
+      background-color #f8f8f8
+      background-image url($CONTEXT_PATH/images/commons/close.png)
+
+  .logo
+    background url($CONTEXT_PATH/images/commons/logo.jpg) center center no-repeat
+    background-size 100% 100%
+    width 160px
+    height 60px
+    float none
+    content ''
+    display block
+    margin 0 auto
+

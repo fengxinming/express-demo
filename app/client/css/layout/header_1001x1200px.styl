@@ -1,0 +1,50 @@
+@media (min-width: 1001px) and (max-width: 1200px)
+  .container
+    max-width 950px
+
+  .header
+    .top
+      padding 0 10px
+
+    .container
+      width 100% !important
+      max-width 100%
+      .nav
+        & > ul
+          &.main-nav
+            & > li
+              & > a
+                padding 0 1.5em
+
+  .logo
+    width 118px
+    height 86px
+    background-size contain
+
+  .nav
+    height 100%
+    float right
+    font-size 1.1em
+    & > ul
+      &.main-nav
+        text-align right
+        & > li
+          display inline-block
+          & > a
+            display inline-block
+            padding 0 2em
+            position relative
+            border-left 1px solid #fff
+            border-right 1px solid #fff
+            &.active
+              background-color #eee
+              border-left-color #eee
+              border-right-color #eee
+            &.focus, &:hover
+              background-color #f8f8f8
+              border-left-color #ddd
+              border-right-color #ddd
+              z-index 9999
+      & > li
+        height 86px
+        line-height 86px
