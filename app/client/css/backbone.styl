@@ -1,3 +1,4 @@
+@require 'nib'
 // 公共样式
 @require 'partials/base.styl'
 // 公共样式
@@ -9,7 +10,7 @@
   width 1200px
   
 #guessyou
-  height 269px
+  // height 269px
   margin-bottom 20px
   overflow hidden
   font-size 12px
@@ -21,12 +22,12 @@
       height 18px
       padding-right 25px
       margin-top 8px
-      background url("//misc.360buyimg.com/product/home/1.0.0/css/i/homebg.png") no-repeat -310px -5px 
+      background url($CONTEXT_PATH/images/commons/homebg.png) no-repeat -310px -5px 
       float right
       display inline
       
   .mc
-    height 232px
+    // height 232px
     border 1px solid #ededed
     border-top 0
     overflow visible
@@ -45,10 +46,10 @@
         position absolute 
         right -1px 
         top -2px 
-        background #b72323 url("//misc.360buyimg.com/product/home/1.0.0/css/i/homebg.png") no-repeat 0 -124px 
+        background #b72323 url($CONTEXT_PATH/images/commons/homebg.png) no-repeat 0 -124px 
         
     ul
-      height 210px 
+      // height 210px 
       padding-top 20px 
       overflow hidden     
       
@@ -58,8 +59,28 @@
         overflow hidden 
         padding-bottom 15px 
         
+        .inner
+          border 1px solid transparent
+          padding 20px
+          &:hover
+            border-color #e4393c
+        
         .p-img
           overflow hidden
+          text-align center 
+          margin-bottom 10px 
+        
+        .p-name
+          height 34px 
+          margin-bottom 6px 
+    
+        .p-price 
+          color #b51d1a 
+          font-size 18px 
+          
+          i
+            font-size 14px
+            font-style normal  
           
         .p-info
           border-left 0 none  
@@ -67,25 +88,39 @@
         .p-name, .p-price
           overflow hidden  
         
-  .p-img
-    text-align center 
-    margin-bottom 10px 
-
-  .p-info
-    padding 0 36px 
-    border-left 1px solid #e6e6e6   
-    
-  .p-name
-    height 36px 
-    margin-bottom 6px 
-    
-  .p-price 
-    color #b51d1a 
-    font-size 18px 
-    
-    i
-      font-size 14px
-
+        .p-btn
+          margin 15px 0 0
+          text-align center
+          
+          .btn-append
+            display block
+            height 28px
+            line-height 28px
+            border 1px solid #999
+            color #666
+            text-align center
+            border-radius 2px
+            
+            &:hover
+              border-color #e4393c
+              background #e4393c
+              color #fff
+              
+              b
+                background-position -28px -57px
+            
+            b
+              display inline-block 
+              height 18px 
+              width 18px 
+              margin-right 5px 
+              background url($CONTEXT_PATH/images/commons/addtocart-icons.png) no-repeat 0 -57px 
+              overflow hidden 
+              vertical-align middle 
+              
+              &:hover
+                background-position -28px -57px 
+        
   h2
     color #333
     float left
@@ -93,11 +128,128 @@
     line-height 30px
     font-size 20px
     padding-right 228px
-    background url("//misc.360buyimg.com/product/home/1.0.0/css/i/homebg.png") 85px -91px
+    background url($CONTEXT_PATH/images/commons/homebg.png) 85px -91px
     
   a
     color #666666
     text-decoration none  
+    
+#shopping-cart-wrapper
+
+  ul.list    
+    li
+      border 1px solid #ccc
+      margin-bottom 10px
+      padding 10px 20px
+      background #fcfcfc
+      height 60px
+      line-height @height
+            
+    .pic, .info, .price, .amount, .sum, .op
+      display inline-block 
+      vertical-align top
+      height 60px
+      line-height @height
+      
+    .info
+      padding 0 10px
+      width 300px
+      
+      .name
+        width 100%
+        display inline-block
+        ellipsis()
+        
+    .price, .sum
+      width 150px
+      color #f40
+      text-align right
+      padding 0 10px
+          
+    .amount
+      overflow hidden
+      position relative
+      z-index 1
+      width 150px
+      
+      .minus
+        display block 
+        height 23px 
+        width 17px 
+        border 1px solid #e5e5e5 
+        background #f0f0f0 
+        text-align center 
+        line-height 23px 
+        position absolute 
+        top 17px 
+        right 59px
+        
+      .text
+        width 39px 
+        height 15px 
+        line-height 15px 
+        border 1px solid #aaa 
+        color #343434 
+        text-align center 
+        padding 4px 0 
+        background-color #fff 
+        background-position -75px -375px 
+        position absolute 
+        z-index 2 
+        right 18px 
+        top 17px 
+        
+      .plus
+        display block 
+        height 23px 
+        width 17px 
+        border 1px solid #e5e5e5 
+        background #f0f0f0 
+        text-align center 
+        line-height 23px 
+        position absolute 
+        top 17px 
+        right 0
+      
+    .op
+      width 200px
+      text-align right
+      .del
+        background-color #da4f49
+        background linear-gradient(top, #ee5f5b, #bd362f)
+        background-repeat repeat-x
+        
+        width 100px
+        height 34px
+        color #333333
+        text-align: center
+        border-radius 4px
+        text-shadow 0 1px 1px rgba(255, 255, 255, 0.75)
+        box-shadow inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+        cursor pointer
+        outline none
+        
+        &, &:hover
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+          color: #ffffff;
+  
+.total-wrapper
+  text-align right
+
+  .num, .unit, .total
+    padding 0 3px
+    color #f40
+    font-weight 900
+    font-size 18px
+    font-family tohoma,arial
+    font-style normal
+  
+  .unit
+    font-family arial  
+    font-size 16px
+
+  .total
+    font-size 22px
     
 table 
   border-collapse collapse
