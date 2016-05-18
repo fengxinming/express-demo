@@ -1,9 +1,9 @@
 'use strict';
 
 exports.home = function(req, res, next) {
-	res.render('responsive/index');
+    res.render('pages/responsive/index');
 };
 
 exports.backbone = function(req, res, next) {
-	res.render('backbone/index');
+    res.render('pages/backbone/index');
 };

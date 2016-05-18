@@ -8,27 +8,29 @@ var backbone = require('backbone');
 
 var Item = backbone.View.extend({
 
-	el: '#wares-list',
+    el: '#wares-list',
 
-	template : _.template( $('#wares-tpl').html(), { variable: 'wares' } ),
+    template: _.template($('#wares-tpl').html(), {
+        variable: 'wares'
+    }),
 
-	events: {
-		'click a.btn-append' : 'addToCart'
-	},
+    events: {
+        'click a.btn-append': 'addToCart'
+    },
 
-	initialize: function(options) {
-		this.render();
-	},
+    initialize: function(options) {
+        this.render();
+    },
 
-	render: function() {
-		this.$el.html(this.template(this.collection.toJSON()));
-		return this;
-	},
+    render: function() {
+        this.$el.html(this.template(this.collection.toJSON()));
+        return this;
+    },
 
-	addToCart: function(evt) {
-		var index = +evt.currentTarget.getAttribute('data-index');
-		this.trigger('addToCart', this.collection.at(index));
-	}
+    addToCart: function(evt) {
+        var index = +evt.currentTarget.getAttribute('data-index');
+        this.trigger('addToCart', this.collection.at(index));
+    }
 
 });
 
