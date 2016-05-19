@@ -36,4 +36,4 @@ const TASK_DIR = path.join(__dirname, 'task/gulp');
     }
 });
 
-gulp.task('default', ['clean:html', 'webpack:watch', 'server:start', 'server:restart', 'auto-reload', 'livereload']);
+gulp.task('default', ['clean:html', 'clean:css', 'webpack:watch', 'server:start', 'server:restart', 'auto-reload', 'livereload']);
