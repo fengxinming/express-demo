@@ -8,14 +8,15 @@ html
     meta(name='keywords', content=KEYWORDS)
     meta(name='description', content=DESCRIPTION)
     title= COMPANY
-    link(type='/image/x-icon', href='#{CONTEXT_PATH}/favicon.ico', rel='icon')
-    link(type='/image/x-icon', href='#{CONTEXT_PATH}/favicon.ico', rel='shortcut')
-    link(type='/image/x-icon', href='#{CONTEXT_PATH}/favicon.ico', rel='shortcut icon')
+    link(type='/image/x-icon', href='#{STATIC_PATH}/favicon.ico', rel='icon')
+    link(type='/image/x-icon', href='#{STATIC_PATH}/favicon.ico', rel='shortcut')
+    link(type='/image/x-icon', href='#{STATIC_PATH}/favicon.ico', rel='shortcut icon')
     block css
     //[if lt IE 9]>
-      <script src='#{CONTEXT_PATH}/components/html5shiv/dist/html5shiv.min.js'></script><![endif]
+      <script src='#{STATIC_PATH}/components/html5shiv/dist/html5shiv.min.js'></script><![endif]
     script.
       window.CONTEXT_PATH = '!{CONTEXT_PATH}';
+      window.STATIC_PATH = '!{STATIC_PATH}';
   body
     block header
       include header
@@ -25,6 +26,6 @@ html
     block footer
       include footer
 
-    script(src='#{CONTEXT_PATH}/components/es5-shim/es5-shim.js')  
+    script(src='#{STATIC_PATH}/components/es5-shim/es5-shim.js')  
     block js
     | !{LRScript}

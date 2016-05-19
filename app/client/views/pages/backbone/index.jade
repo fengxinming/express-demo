@@ -1,10 +1,10 @@
 extends ../../partials/layout
 
 append css
-  link(rel='stylesheet', href='#{CONTEXT_PATH}/css/backbone.css')
+  link(rel='stylesheet', href='#{STATIC_PATH}/css/backbone.css')
   
 append js
-  script(src='#{CONTEXT_PATH}/js/backbone/app.js')
+  script(src='#{STATIC_PATH}/js/backbone/app.js')
   
 block content
   .container
@@ -31,7 +31,7 @@ block content
       <% for(var i = 0, wares = wares || [], ware = wares[i], len = wares.length;i < len; ware = wares[++i]) { %>
         <li>
           <div class="inner">
-            <div class="p-img"><a href="<%=ware.link %>" target="_blank"><img width="130" height="130" title="<%=ware.description %>" src="#{CONTEXT_PATH}<%=ware.imgUrl %>"/></a></div>
+            <div class="p-img"><a href="<%=ware.link %>" target="_blank"><img width="130" height="130" title="<%=ware.description %>" src="#{STATIC_PATH}<%=ware.imgUrl %>"/></a></div>
             <div class="p-info">
               <div class="p-name"><a href="<%=ware.link %>" target="_blank" title="<%=ware.description %>"><%=ware.description %></a></div>
               <div class="p-price"><i>¥</i><%=ware.price %></div>
@@ -42,7 +42,7 @@ block content
       <% } %>
     script#goods-tpl(type='text/template').
       <li class="li_<%=good.cid %>">
-        <div class="pic"><a href="<%=good.link %>" target="_blank"><img width="60" height="60" title="<%=good.description %>" src="#{CONTEXT_PATH}<%=good.imgUrl %>"/></a></div>
+        <div class="pic"><a href="<%=good.link %>" target="_blank"><img width="60" height="60" title="<%=good.description %>" src="#{STATIC_PATH}<%=good.imgUrl %>"/></a></div>
         <div class="info"><a href="<%=good.link %>" target="_blank" title="<%=good.description %>" class="name"><%=good.description %></a></div>
         <div class="price"><%=good.price %></div>
         <div class="amount"><a href="#" onclick="return false;" class="minus">-</a><input autocomplete="off" value="<%=good.quantity %>" class="text"/><a href="#" onclick="return false;" class="plus">+</a></div>
