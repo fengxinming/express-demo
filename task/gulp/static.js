@@ -11,7 +11,7 @@ const clean = require('gulp-clean');
 const stylus = require('gulp-stylus');
 
 gulp.task('clean:html', function(done) {
-    gulp.src([serverCfg.STATIC_DIR + '/html', serverCfg.STATIC_DIR + '/index.html'], {
+    gulp.src([serverCfg.STATIC_DIR + '/html', './index.html'], {
             read: false
         })
         .pipe(clean());
