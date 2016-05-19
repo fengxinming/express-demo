@@ -25,7 +25,9 @@ gulp.task('jade2html', function(done) {
         .pipe(gulpJade({
             jade: jade,
             pretty: false,
-            locals: locals
+            locals: Object.assign(locals, {
+                CONTEXT_PATH: '/public'
+            })
         }))
         .on('error', function(err) {
             console.log('不好啦，jade编译出错！', err);
