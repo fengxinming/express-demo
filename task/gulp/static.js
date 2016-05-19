@@ -27,7 +27,8 @@ gulp.task('jade2html', function(done) {
                 jade: jade,
                 pretty: false,
                 locals: Object.assign({}, locals, {
-                    CONTEXT_PATH: '/express-demo/public'
+                    STATIC_PATH: '/express-demo/public',
+                    CONTEXT_PATH: '/express-demo'
                 })
             }))
             .on('error', function(err) {
@@ -56,7 +57,7 @@ const stylusFn = function() {
             nib()
         ],
         globals: {
-            '$CONTEXT_PATH': '/express-demo/public'
+            '$STATIC_PATH': '/express-demo/public'
         },
         functions: {
             url: stylus.stylus.url({

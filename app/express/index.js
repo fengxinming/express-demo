@@ -27,36 +27,38 @@ app.use(logFactory.connectLogger('http'));
 app.use(bodyParser.json());
 
 // 解析提交参数，最大支持1000个参数
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // 解析cookies数据到req.cookies里面
 app.use(cookieParser());
 
 // 开发环境直接读取stylus
-if(NODE_ENV === 'development') {
-  const stylus = require('stylus');
-  const nib = require('nib');
-  app.use(stylus.middleware({
-    src: serverCfg.CLIENT_DIR,
-    dest: serverCfg.STATIC_DIR,
-    compile: function(str, path) {
-      return stylus(str)
-        .set('filename', path)
-        .define('url', stylus.url({
-          paths: [ serverCfg.STATIC_DIR ]
-        }))
-        .define('$CONTEXT_PATH', localsCfg.CONTEXT_PATH)
-        .use(nib());
-    }
-  }));
+if (NODE_ENV === 'development') {
+    const stylus = require('stylus');
+    const nib = require('nib');
+    app.use(stylus.middleware({
+        src: serverCfg.CLIENT_DIR,
+        dest: serverCfg.STATIC_DIR,
+        compile: function(str, path) {
+            return stylus(str)
+                .set('filename', path)
+                .define('url', stylus.url({
+                    paths: [serverCfg.STATIC_DIR]
+                }))
+                .define('$STATIC_PATH', localsCfg.STATIC_PATH)
+                .use(nib());
+        }
+    }));
 
-  //livereload
-  if (!serverCfg.livereload.disabled) {
-    const livereload = require('./livereload');
-    const options = Object.assign({}, serverCfg.livereload);
-    delete options.disabled;
-    app.use(livereload(options));
-  }
+    //livereload
+    if (!serverCfg.livereload.disabled) {
+        const livereload = require('./livereload');
+        const options = Object.assign({}, serverCfg.livereload);
+        delete options.disabled;
+        app.use(livereload(options));
+    }
 }
 
 //静态文件目录
@@ -69,28 +71,28 @@ Object.assign(app.locals, localsCfg);
 
 // 404异常捕捉
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // 500异常捕捉
 if (NODE_ENV === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
-}else{
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: {}
+} else {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: {}
+        });
     });
-  });
 }
 
 module.exports = app;
