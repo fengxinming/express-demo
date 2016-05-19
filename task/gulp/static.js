@@ -25,7 +25,7 @@ gulp.task('jade2html', function(done) {
         .pipe(gulpJade({
             jade: jade,
             pretty: false,
-            locals: Object.assign(locals, {
+            locals: Object.assign({}, locals, {
                 CONTEXT_PATH: '/public'
             })
         }))
