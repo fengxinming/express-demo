@@ -50,7 +50,7 @@ const stylusFn = function() {
             nib()
         ],
         globals: {
-            '$CONTEXT_PATH': locals.CONTEXT_PATH
+            '$CONTEXT_PATH': '/public'
         },
         functions: {
             url: stylus.stylus.url({
