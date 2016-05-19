@@ -19,7 +19,7 @@ gulp.task('livereload-stylue', function() {
 });
 
 gulp.task('livereload-js', function() {
-    gulp.src('./public/js/**/app.js')
+    gulp.src('./public/js/**/*.js')
         .pipe(livereload());
 });
 

@@ -9,9 +9,14 @@ var commodity = backbone.Model.extend({
 		description : '',
 		imgUrl: '',
 		link: '',
-		price: 1,
+		price: 0,
 		quantity: 0,
 		subtotal: 0
+	},
+	
+	initialize: function() {
+		this.on('change:quantity', this.subtotal);
+		this.on('change:price', this.subtotal);
 	},
 
 	//小计
@@ -22,9 +27,14 @@ var commodity = backbone.Model.extend({
 	},
 
 	//商品数量的增减
-	quanity : function( num ) {
+	quantity : function( num ) {
 		var qty = this.get('quantity');
-		this.set('quantity', qty + num);
+		qty += num;
+		if(!qty) {
+			this.trigger('validate', '商品数量不能小于1');
+			return;
+		}
+		this.set('quantity', qty);
 	}
 
 });

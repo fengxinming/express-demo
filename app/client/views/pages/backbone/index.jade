@@ -17,80 +17,16 @@ block content
           i
         ul#wares-list
 
-    #shopping-cart-wrapper
-      ul.list
-        li
-          .pic
-            a(href='//item.jd.com/2191150.html', target='_blank')
-              img(width='60', height='60', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材', src='#{CONTEXT_PATH}/images/store/565951c3Ncbedcad1.jpg')        
-          .info
-            a.name(href='//item.jd.com/2191150.html', target='_blank', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材') 双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材
-          .price ￥10
-          .amount
-            a.minus(href='#', onclick='return false;') -
-            input.text(autocomplete='off')
-            a.plus(href='#', onclick='return false;') +
-          .sum ￥10
-          .op
-            input.del(type='button', value='删除')
+    ul#shopping-cart-wrapper.list
             
-        li
-          .pic
-            a(href='//item.jd.com/2191150.html', target='_blank')
-              img(width='60', height='60', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材', src='#{CONTEXT_PATH}/images/store/565951c3Ncbedcad1.jpg')        
-          .info
-            a.name(href='//item.jd.com/2191150.html', target='_blank', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材') 双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材
-          .price ￥10
-          .amount
-            a.minus(href='#', onclick='return false;') -
-            input.text(autocomplete='off')
-            a.plus(href='#', onclick='return false;') +
-          .sum ￥10
-          .op
-            input.del(type='button', value='删除')
+    #total-wrapper
+      | 已选商品
+      em.num 0
+      | 件
+      | 合计：
+      i.unit ￥
+      em.total 0.00              
             
-        li
-          .pic
-            a(href='//item.jd.com/2191150.html', target='_blank')
-              img(width='60', height='60', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材', src='#{CONTEXT_PATH}/images/store/565951c3Ncbedcad1.jpg')        
-          .info
-            a.name(href='//item.jd.com/2191150.html', target='_blank', title='双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材') 双超（suncao）SC-SB011 多功能仰卧板 家用仰卧起坐健腹肌板 家用运动健身器材
-          .price ￥10
-          .amount
-            a.minus(href='#', onclick='return false;') -
-            input.text(autocomplete='off')
-            a.plus(href='#', onclick='return false;') +
-          .sum ￥10
-          .op
-            input.del(type='button', value='删除')
-            
-      .total-wrapper
-        | 已选商品
-        em.num 0
-        | 件
-        | 合计：
-        i.unit ￥
-        em.total 0.00              
-            
-    #wrap
-      h2#basket-message
-        | You have
-        span#basket 0
-        |  items in your basket
-      ul#default-item-list
-      table#shopping-cart
-        tbody#shopping-list
-        tfoot
-          tr
-            td#total(colspan='4') 0.00
-    script#tmp-shoppingListItem(type='text/template').
-      <a class="name"><%= title %></a>
-      <span class="price"><%= price.toFixed(2) %></span>
-    script#tmp-shoppingCartItem(type='text/template').
-      <td class="name"><%= title %></td>
-      <td class="quantity-total"><%= quantity %> </td>
-      <td><a class="quantity" data-type="increase"><a class="quantity" data-type="decrease"></a> </a></td>
-      <td class="sub-total"><%= total.toFixed(2) %></td>
     script#wares-tpl(type='text/template').
       <% for(var i = 0, wares = wares || [], ware = wares[i], len = wares.length;i < len; ware = wares[++i]) { %>
         <li>
@@ -104,3 +40,14 @@ block content
           </div>
         </li>
       <% } %>
+    script#goods-tpl(type='text/template').
+      <li class="li_<%=good.cid %>">
+        <div class="pic"><a href="<%=good.link %>" target="_blank"><img width="60" height="60" title="<%=good.description %>" src="<%=good.imgUrl %>"/></a></div>
+        <div class="info"><a href="<%=good.link %>" target="_blank" title="<%=good.description %>" class="name"><%=good.description %></a></div>
+        <div class="price"><%=good.price %></div>
+        <div class="amount"><a href="#" onclick="return false;" class="minus">-</a><input autocomplete="off" value="<%=good.quantity %>" class="text"/><a href="#" onclick="return false;" class="plus">+</a></div>
+        <div class="sum"><%=good.subtotal %></div>
+        <div class="op">
+          <input type="button" value="删除" class="del"/>
+        </div>
+      </li>

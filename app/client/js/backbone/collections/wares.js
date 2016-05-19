@@ -1,22 +1,26 @@
 'use strict';
 var backbone = require('backbone');
 
-var commodity = require('../models/ware');
+var ware = require('../models/ware');
 
-var commodities = backbone.Collection.extend({
+var wares = backbone.Collection.extend({
 
-	model: commodity,
+	model: ware,
 
-	total : function() {
-		
-		var total = 0;
+	hodgepodge: function (cb) {
 
-		this.each(function( model ){
-			total += model.subtotal();
+		var obj = { total: 0, piece: this.length, html: '' };
+
+		this.each(function (model) {
+			obj.total += model.subtotal();
+			var param = model.toJSON();
+			param.cid = model.cid;
+			obj.html += cb(param);
 		});
-
-		return total.toFixed(2);
+		
+		obj.total = obj.total.toFixed(2);
+		return obj;
 	}
 });
 
-module.exports = commodities;
+module.exports = wares;

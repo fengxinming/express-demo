@@ -2,6 +2,7 @@
 node_modules
 public/js/
 public/css/
+public/html/
 logs
 npm-debug.log
 .idea

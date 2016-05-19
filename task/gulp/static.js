@@ -19,27 +19,31 @@ gulp.task('clean:html', function(done) {
 });
 
 gulp.task('jade2html', function(done) {
-    gulp.src([
-            serverCfg.VIEWS_DIR + '/pages/**/*.jade'
-        ])
-        .pipe(gulpJade({
-            jade: jade,
-            pretty: false,
-            locals: Object.assign({}, locals, {
-                CONTEXT_PATH: '/express-demo/public'
+    setTimeout(function() {
+        gulp.src([
+                serverCfg.VIEWS_DIR + '/pages/**/*.jade'
+            ])
+            .pipe(gulpJade({
+                jade: jade,
+                pretty: false,
+                locals: Object.assign({}, locals, {
+                    CONTEXT_PATH: '/express-demo/public'
+                })
+            }))
+            .on('error', function(err) {
+                console.log('不好啦，jade编译出错！', err);
             })
-        }))
-        .on('error', function(err) {
-            console.log('不好啦，jade编译出错！', err);
-        })
-        .pipe(gulp.dest(serverCfg.STATIC_DIR + '/html'));
-    done();
+            .pipe(gulp.dest(serverCfg.STATIC_DIR + '/html'));
+        done();
+    }, 100);
 });
 
 gulp.task('html:index', function(done) {
-    gulp.src([serverCfg.STATIC_DIR + '/html/responsive/index.html'])
-        .pipe(gulp.dest('./'));
-    done();
+    setTimeout(function() {
+        gulp.src([serverCfg.STATIC_DIR + '/html/responsive/index.html'])
+            .pipe(gulp.dest('./'));
+        done();
+    }, 1000);
 });
 
 const nib = require('nib');
@@ -64,21 +68,25 @@ const stylusFn = function() {
     }).pipe(gulp.dest('./public/css'));
 };
 
-gulp.task('clean:css', function() {
-    return gulp.src(['public/css/*'], {
+gulp.task('clean:css', function(done) {
+    gulp.src(['public/css/*'], {
             read: false
         })
         .pipe(clean());
+    done();
 });
 
 gulp.task('stylus', ['clean:css'], function(done) {
-    stylusFn().on('end', done);
+    setTimeout(function() {
+        stylusFn();
+        done();
+    }, 50);
 });
 
 gulp.task('stylus:watch', function() {
     stylusFn();
 });
 
-gulp.task('html', gulpSequence('clean:html', 'jade2html'));
+gulp.task('html', gulpSequence('clean:html', 'jade2html', 'html:index'));
 
 gulp.task('static', gulpSequence('html', 'stylus'));
