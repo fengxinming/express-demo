@@ -11,7 +11,6 @@ module.exports = {
 	resolve: {
 		modulesDirectories: ['node_modules', 'public/components'],
 		alias: {
-			'npm': __dirname + '/node_modules',
 			'js': __dirname + '/app/client/js'
 		}
 	},

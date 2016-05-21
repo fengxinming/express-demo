@@ -225,7 +225,7 @@ function gulpWebpack(options, wp, done) {
 const CONF = require('../../webpack.config.js');
 
 function pack(options) {
-    gulp.src([serverCfg.CLIENT_DIR + '/js/**/app.js'])
+    gulp.src([serverCfg.CLIENT_DIR + '/js/**/app.js', '!' + serverCfg.CLIENT_DIR + '/js/react/**/*.js'])
         .pipe(named())
         .pipe(gulpWebpack(Object.assign({}, CONF, options)))
         .on('error', function(err) {
@@ -235,7 +235,7 @@ function pack(options) {
 }
 
 gulp.task('webpack', function() {
-    gulp.src([serverCfg.STATIC_DIR + '/js/**/app.js'], {
+    gulp.src([serverCfg.STATIC_DIR + '/js/**/app.js', '!' + serverCfg.CLIENT_DIR + '/js/react/**/*.js'], {
             read: false
         })
         .pipe(clean());

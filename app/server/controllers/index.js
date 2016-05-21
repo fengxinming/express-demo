@@ -7,3 +7,7 @@ exports.home = function(req, res, next) {
 exports.backbone = function(req, res, next) {
     res.render('pages/backbone/index');
 };
+
+exports.react = function(req, res, next) {
+    res.render('pages/react/index');
+};

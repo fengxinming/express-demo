@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+@require 'nib'
+// 公共样式
+@require 'partials/base.styl'
+// 公共样式
+@require 'partials/common.styl'
+// 首位布局
+@require 'layout/index.styl'
+
+.container
+  width 1200px
+
+*
+  box-sizing border-box
+
+p
+  margin-bottom 18px
+
+.main
+  padding 20px
+  overflow hidden
+
+.product_summary_collection
+  float left
+  width 80%
+
+.product_summary
+  background-color #fff
+  width 25%
+  float left
+  min-width 220px
+  margin-right 20px
+  padding 15px
+  position relative
+  padding-bottom 70px
+  .product_image
+    width 100%
+    margin-bottom 10px
+  .product_price
+    color green
+  .product_title
+    color #333333
+    font-size 19px
+    margin-bottom 15px
+    line-height 1.2
+  .add_to_cart
+    display block
+    height 28px
+    line-height 28px
+    border 1px solid #999
+    color #666
+    text-align center
+    border-radius 2px
+    
+    &:hover
+      border-color #e4393c
+      background #e4393c
+      color #fff
+      
+      b
+        background-position -28px -57px
+
+.cart
+  float left
+  width 20%
+  background-color #fff
+  padding 15px
+  & > h1
+    color #333333
+    font-size 30px
+    margin-bottom 20px
+  .products
+    margin-bottom 20px
+    width 100%
+    th
+      font-weight 600
+      text-align left
+      padding-bottom 10px
+
+.test_instructions
+  background-color #333
+  border-top 1px solid #000
+  color #eee
+  font-size 16px
+  padding 35px
+  padding-bottom 55px
+  text-shadow 1px 1px #000
+  box-shadow inset 0px -29px 43px -27px black
+  h1
+    color #fff
+    font-size 40px
+    margin-bottom 35px
+  ul
+    list-style disc inside none
+    padding-left 25px
+  li
+    margin-bottom 3px
+
+

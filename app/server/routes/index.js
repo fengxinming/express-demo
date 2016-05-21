@@ -11,4 +11,7 @@ module.exports = function(router) {
     //backbone demo
     router.get('/html/backbone/index.html', ctrl.backbone);
 
+    //react demo
+    router.get('/html/react/index.html', ctrl.react);
+
 };
